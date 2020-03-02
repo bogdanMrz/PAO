@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class tema3
+public class ex3
 {
   public static void main(String[] args){
         Scanner reader = new Scanner(System.in);
