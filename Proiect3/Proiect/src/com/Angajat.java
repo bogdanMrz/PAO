@@ -1,0 +1,50 @@
+package com;
+
+import java.io.IOException;
+
+public class Angajat extends Persoana {
+    protected int salariu;
+
+    public Angajat(String nume, String prenume, int salariu) {
+        super(nume, prenume);
+        this.salariu = salariu;
+    }
+    public Angajat(String nume, String prenume){
+        super(nume, prenume);
+    }
+    public Angajat() {
+        super();
+    }
+
+    public int getSalariu() {
+        return salariu;
+    }
+
+    public void setSalariu(int salariu) {
+        try {
+
+            Audit.add(this.getClass().getSimpleName()
+                    .toString() );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        this.salariu = salariu;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Angajat{" +
+                "nume=" + nume +
+                ", prenume=" + prenume  +
+                ", salariu=" + salariu +
+                '}';
+    }
+
+    public Angajat copy(){
+        return new Angajat(nume,prenume,salariu);
+    }
+
+
+}
